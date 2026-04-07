@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sucursales — Alba Postal</title>
+  <meta name="description" content="Encontrá la sucursal de Alba Postal más cercana a vos.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <div id="navbar-placeholder"></div>
+
+  <div style="min-height:100vh;background:var(--gray-50);padding-top:80px">
+    <div style="background:var(--primary);padding:5rem 0 4rem;text-align:center">
+      <div class="container">
+        <span class="section-tag" style="color:var(--accent)">Red Nacional</span>
+        <h1 style="font-size:clamp(2rem,5vw,3.5rem);font-weight:800;color:#fff;margin-bottom:1rem">Nuestras Sucursales</h1>
+        <p style="font-size:1.125rem;color:var(--blue-200);max-width:36rem;margin:0 auto">Encontrá el punto de atención más cercano a vos en todo el país.</p>
+      </div>
+    </div>
+    <div class="container" style="padding-top:4rem;padding-bottom:6rem">
+      <div style="display:grid;gap:1.5rem;margin-bottom:4rem" class="branches-grid">
+        <div class="branch-card">
+          <div class="branch-icon">🏢</div>
+          <div>
+            <h3>Sede Central — CABA</h3>
+            <p>San José 1540, Buenos Aires</p>
+            <span>Lun–Vie: 9:00–18:00 · Sáb: 9:00–13:00</span>
+          </div>
+        </div>
+        <div class="branch-card">
+          <div class="branch-icon">🌎</div>
+          <div>
+            <h3>Miami — USA</h3>
+            <p>Dirección a confirmar</p>
+            <span>Horario local</span>
+          </div>
+        </div>
+        <div class="branch-card">
+          <div class="branch-icon">🌏</div>
+          <div>
+            <h3>Guangzhou — China</h3>
+            <p>Dirección a confirmar</p>
+            <span>Horario local</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="border-radius:2rem;overflow:hidden;box-shadow:var(--shadow-2xl)">
+        <iframe
+          src="https://maps.google.com/maps?q=San%20Jos%C3%A9%201540%2C%20Buenos%20Aires%2C%20Argentina&t=&z=14&ie=UTF8&iwloc=&output=embed"
+          width="100%" height="500"
+          style="border:0;display:block;filter:grayscale(.2) contrast(1.2)"
+          allowfullscreen loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Sucursales Alba Postal">
+        </iframe>
+      </div>
+    </div>
+  </div>
+
+  <div id="footer-placeholder"></div>
+  <script src="/js/components.js"></script>
+  <script src="/js/main.js"></script>
+  <style>
+    .branches-grid { grid-template-columns: 1fr; }
+    @media (min-width: 768px) { .branches-grid { grid-template-columns: repeat(3, 1fr) !important; } }
+    .branch-card { background:#fff;border-radius:1.5rem;padding:2rem;box-shadow:var(--shadow-md);border:1px solid var(--gray-100);display:flex;align-items:center;gap:1.5rem;transition:box-shadow .3s,transform .3s; }
+    .branch-card:hover { box-shadow:var(--shadow-xl);transform:translateY(-4px); }
+    .branch-icon { font-size:2.5rem;width:4.5rem;height:4.5rem;background:var(--light);border-radius:1rem;display:flex;align-items:center;justify-content:center;flex-shrink:0; }
+    .branch-card h3 { font-size:1.125rem;font-weight:700;color:var(--primary);margin-bottom:.25rem; }
+    .branch-card p  { font-size:.9375rem;color:var(--gray-600);margin-bottom:.25rem; }
+    .branch-card span { font-size:.8125rem;color:var(--gray-400);font-weight:500; }
+  </style>
+</body>
+</html>

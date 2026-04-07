@@ -131,6 +131,42 @@ document.addEventListener('DOMContentLoaded', function () {
 
   initScrollReveal();
 
+  /* --- Counter animation --- */
+  function initCounters() {
+    const counters = document.querySelectorAll('.stat-value[data-count]');
+    if (!counters.length) return;
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        observer.unobserve(entry.target);
+
+        const el       = entry.target;
+        const target   = parseInt(el.dataset.count, 10);
+        const prefix   = el.dataset.prefix || '';
+        const suffix   = el.dataset.suffix || '';
+        const duration = 1800;
+        const start    = performance.now();
+
+        function easeOutQuart(t) { return 1 - Math.pow(1 - t, 4); }
+
+        function tick(now) {
+          const elapsed  = now - start;
+          const progress = Math.min(elapsed / duration, 1);
+          const value    = Math.floor(easeOutQuart(progress) * target);
+          el.textContent = prefix + value + suffix;
+          if (progress < 1) requestAnimationFrame(tick);
+        }
+
+        requestAnimationFrame(tick);
+      });
+    }, { threshold: 0.4 });
+
+    counters.forEach(c => observer.observe(c));
+  }
+
+  initCounters();
+
   /* --- CTA Form (home) --- */
   function initCTAForm() {
     const form    = document.getElementById('cta-form');

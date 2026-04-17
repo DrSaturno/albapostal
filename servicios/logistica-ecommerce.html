@@ -246,8 +246,8 @@
     .pillar-card:nth-child(2) { transition-delay: .15s; }
     .pillar-card:nth-child(3) { transition-delay: .3s; }
     .pillar-num { position: absolute; top: 1rem; right: 1.5rem; font-size: 6rem; font-weight: 900; color: var(--gray-50); line-height: 1; }
-    .pillar-icon { font-size: 2rem; width: 5rem; height: 5rem; background: #eff6ff; border-radius: 1.5rem; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; transition: transform .3s; }
-    .pillar-card:hover .pillar-icon { transform: scale(1.1); }
+    .pillar-icon { font-size: 2rem; width: 5rem; height: 5rem; background: linear-gradient(135deg, rgba(255,153,0,.18) 0%, rgba(255,153,0,.07) 100%); border: 2px solid rgba(255,153,0,.25); border-radius: 1.5rem; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; transition: transform .3s, box-shadow .3s; box-shadow: 0 4px 16px rgba(255,153,0,.15); }
+    .pillar-card:hover .pillar-icon { transform: scale(1.1); box-shadow: 0 8px 24px rgba(255,153,0,.3); }
     .pillar-card h3 { font-size: 1.5rem; font-weight: 700; color: var(--primary); margin-bottom: 1rem; }
     .pillar-card p  { color: var(--gray-600); line-height: 1.6; font-weight: 500; }
     .form-faq-grid { grid-template-columns: 1fr; }

@@ -34,7 +34,7 @@
   <!-- 3 PILARES -->
   <div style="background:#fff;padding-bottom:6rem">
     <div class="container" style="transform:translateY(-2.5rem)">
-      <div style="display:grid;gap:1.5rem;grid-template-columns:1fr" class="three-pillars">
+      <div class="three-pillars">
         <div class="pillar-card">
           <div class="pillar-num">1</div>
           <div class="pillar-icon">📦</div>
@@ -231,14 +231,20 @@
   <script src="/js/components.js"></script>
   <script src="/js/main.js"></script>
   <style>
-    .three-pillars { grid-template-columns: 1fr; }
+    .three-pillars { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
     @media (min-width: 768px) { .three-pillars { grid-template-columns: repeat(3, 1fr); } }
     .pillar-card {
       background: #fff; border-radius: 1.5rem; padding: 2.5rem;
       box-shadow: 0 25px 50px rgba(0,0,0,.1); border: 1px solid var(--gray-100);
-      position: relative; overflow: hidden; transition: transform .3s;
+      position: relative; overflow: hidden;
+      opacity: 0; transform: translateY(36px);
+      transition: transform .55s ease, opacity .55s ease, box-shadow .3s;
     }
-    .pillar-card:hover { transform: translateY(-8px); }
+    .pillar-card.visible { opacity: 1; transform: none; }
+    .pillar-card.visible:hover { transform: translateY(-8px); }
+    .pillar-card:nth-child(1) { transition-delay: 0s; }
+    .pillar-card:nth-child(2) { transition-delay: .15s; }
+    .pillar-card:nth-child(3) { transition-delay: .3s; }
     .pillar-num { position: absolute; top: 1rem; right: 1.5rem; font-size: 6rem; font-weight: 900; color: var(--gray-50); line-height: 1; }
     .pillar-icon { font-size: 2rem; width: 5rem; height: 5rem; background: #eff6ff; border-radius: 1.5rem; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; transition: transform .3s; }
     .pillar-card:hover .pillar-icon { transform: scale(1.1); }

@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   /* --- Service cards scroll reveal --- */
   function initScrollReveal() {
-    const cards = document.querySelectorAll('.service-card');
+    const cards = document.querySelectorAll('.service-card, .pillar-card');
     if (!cards.length) return;
 
     const observer = new IntersectionObserver((entries) => {

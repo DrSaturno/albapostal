@@ -292,15 +292,15 @@
           <form id="cta-form" class="cta-form-grid">
             <div>
               <label class="cta-form-label" for="cta-name">Nombre completo</label>
-              <input id="cta-name" type="text" required placeholder="Ej. Juan Pérez" class="cta-form-input" pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]{3,}" title="Mínimo 3 caracteres">
+              <input id="cta-name" name="nombre" type="text" required placeholder="Ej. Juan Pérez" class="cta-form-input" pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]{3,}" title="Mínimo 3 caracteres">
             </div>
             <div>
               <label class="cta-form-label" for="cta-email">Correo electrónico</label>
-              <input id="cta-email" type="email" required placeholder="ejemplo@empresa.com" class="cta-form-input">
+              <input id="cta-email" name="email" type="email" required placeholder="ejemplo@empresa.com" class="cta-form-input">
             </div>
             <div style="grid-column:1/-1">
               <label class="cta-form-label" for="cta-message">¿En qué podemos ayudarte?</label>
-              <textarea id="cta-message" rows="4" required minlength="10" placeholder="Escribe tu consulta..." class="cta-form-textarea"></textarea>
+              <textarea id="cta-message" name="mensaje" rows="4" required minlength="10" placeholder="Escribe tu consulta..." class="cta-form-textarea"></textarea>
             </div>
             <div style="grid-column:1/-1;margin-top:1rem">
               <button type="submit" class="btn btn-accent btn-lg form-submit-btn" style="width:100%">Enviar Consulta</button>

@@ -33,7 +33,7 @@
 
   <!-- 3 PILARES -->
   <div style="background:#fff;padding-bottom:6rem">
-    <div class="container" style="transform:translateY(-2.5rem)">
+    <div class="container" style="padding-top:3rem">
       <div class="three-pillars">
         <div class="pillar-card">
           <div class="pillar-num">1</div>
@@ -164,19 +164,19 @@
             <form class="service-form form-grid">
               <div class="form-field">
                 <label class="form-label">Nombre completo *</label>
-                <input type="text" placeholder="Juan García" class="form-input" required minlength="3">
+                <input type="text" name="nombre" placeholder="Juan García" class="form-input" required minlength="3">
               </div>
               <div class="form-field">
                 <label class="form-label">Nombre de tu empresa / tienda</label>
-                <input type="text" placeholder="Mi Tienda" class="form-input">
+                <input type="text" name="empresa" placeholder="Mi Tienda" class="form-input">
               </div>
               <div class="form-field full">
                 <label class="form-label">Email corporativo *</label>
-                <input type="email" placeholder="juan@empresa.com" class="form-input" required>
+                <input type="email" name="email" placeholder="juan@empresa.com" class="form-input" required>
               </div>
               <div class="form-field full">
                 <label class="form-label">Volumen mensual de envíos</label>
-                <select class="form-select">
+                <select name="volumen_mensual" class="form-select">
                   <option value="">¿Cuántos envíos por mes?</option>
                   <option>0 - 100 paquetes/mes</option>
                   <option>101 - 500 paquetes/mes</option>
@@ -185,7 +185,7 @@
               </div>
               <div class="form-field full">
                 <label class="form-label">Preguntas o comentarios</label>
-                <textarea rows="4" placeholder="Describí tu necesidad..." class="form-textarea"></textarea>
+                <textarea rows="4" name="comentarios" placeholder="Describí tu necesidad..." class="form-textarea"></textarea>
               </div>
               <div class="form-submit-wrap">
                 <button type="submit" class="form-submit-btn">Solicitar Propuesta</button>

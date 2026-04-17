@@ -1035,10 +1035,14 @@ input, textarea, select { font-family: inherit; }
 .page-hero {
   position: relative;
   padding: 10rem 0 7rem;
+  min-height: 75vh;
+  display: flex;
+  align-items: center;
   background: var(--navy);
   overflow: hidden;
 }
 @media (min-width: 1024px) { .page-hero { padding: 14rem 0 9rem; } }
+.page-hero > .container { width: 100%; }
 .page-hero-bg {
   position: absolute; inset: 0;
 }

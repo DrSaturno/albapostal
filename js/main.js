@@ -175,14 +175,21 @@ document.addEventListener('DOMContentLoaded', function () {
     const resetBtn = document.getElementById('cta-reset');
     if (!form) return;
 
-    form.addEventListener('submit', function (e) {
+    form.addEventListener('submit', async function (e) {
       e.preventDefault();
       const btn = form.querySelector('.form-submit-btn');
       if (btn) { btn.textContent = 'Enviando...'; btn.disabled = true; }
-      setTimeout(() => {
+      try {
+        const data = new FormData(form);
+        data.append('_subject', 'Consulta desde la home – Alba Postal');
+        await fetch('https://formsubmit.co/ajax/info@albapostal.com', {
+          method: 'POST', headers: { 'Accept': 'application/json' }, body: data
+        });
         form.style.display = 'none';
         if (success) success.classList.add('show');
-      }, 1500);
+      } catch {
+        if (btn) { btn.textContent = 'Enviar Consulta'; btn.disabled = false; }
+      }
     });
 
     if (resetBtn) {
@@ -213,18 +220,25 @@ document.addEventListener('DOMContentLoaded', function () {
 
   /* --- Generic contact/service forms --- */
   document.querySelectorAll('form.service-form').forEach(form => {
-    form.addEventListener('submit', function (e) {
+    form.addEventListener('submit', async function (e) {
       e.preventDefault();
       const btn = form.querySelector('button[type="submit"]');
       const original = btn?.textContent;
       if (btn) { btn.textContent = 'Enviando...'; btn.disabled = true; }
-      setTimeout(() => {
-        if (btn) { btn.textContent = '¡Enviado!'; }
+      try {
+        const data = new FormData(form);
+        data.append('_subject', 'Consulta desde albapostal.com.ar');
+        await fetch('https://formsubmit.co/ajax/info@albapostal.com', {
+          method: 'POST', headers: { 'Accept': 'application/json' }, body: data
+        });
+        if (btn) { btn.textContent = '✓ Mensaje enviado'; }
         setTimeout(() => {
           form.reset();
           if (btn) { btn.textContent = original; btn.disabled = false; }
-        }, 2000);
-      }, 1200);
+        }, 3000);
+      } catch {
+        if (btn) { btn.textContent = original; btn.disabled = false; }
+      }
     });
   });
 

@@ -1045,16 +1045,15 @@ input, textarea, select { font-family: inherit; }
 .page-hero-bg img {
   width: 100%; height: 100%;
   object-fit: cover;
-  mix-blend-mode: luminosity;
-  opacity: .75;
+  opacity: .9;
 }
 .page-hero-overlay-r {
   position: absolute; inset: 0;
-  background: linear-gradient(to right, rgba(26,58,82,.9), transparent);
+  background: linear-gradient(to right, rgba(10,25,41,.72) 0%, rgba(10,25,41,.35) 45%, rgba(10,25,41,.1) 100%);
 }
 .page-hero-overlay-t {
   position: absolute; inset: 0;
-  background: linear-gradient(to top, var(--navy), rgba(10,25,41,.7), transparent);
+  background: linear-gradient(to top, rgba(10,25,41,.75) 0%, rgba(10,25,41,.2) 40%, transparent 100%);
 }
 .page-hero-content { position: relative; z-index: 2; text-align: center; }
 .page-hero-tag {
@@ -1488,7 +1487,7 @@ input, textarea, select { font-family: inherit; }
   overflow: hidden;
   z-index: 0;
 }
-.contacto-bg img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; mix-blend-mode: luminosity; opacity: .8; }
+.contacto-bg img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .9; }
 .contacto-bg::after {
   content: '';
   position: absolute; inset: 0;
@@ -1497,10 +1496,10 @@ input, textarea, select { font-family: inherit; }
 .contacto-bg::before {
   content: '';
   position: absolute; inset: 0;
-  background: linear-gradient(to right, rgba(26,58,82,.9), transparent);
+  background: linear-gradient(to right, rgba(10,25,41,.72) 0%, rgba(10,25,41,.35) 45%, rgba(10,25,41,.1) 100%);
   z-index: 1;
 }
-.contacto-overlay-grad { position: absolute; inset: 0; background: linear-gradient(to top, var(--navy), rgba(10,25,41,.7), transparent); z-index: 1; }
+.contacto-overlay-grad { position: absolute; inset: 0; background: linear-gradient(to top, rgba(10,25,41,.75) 0%, rgba(10,25,41,.2) 40%, transparent 100%); z-index: 1; }
 
 .contacto-page { background: var(--gray-50); min-height: 100vh; position: relative; }
 .contacto-inner { position: relative; z-index: 10; padding-top: 5rem; padding-bottom: 6rem; }

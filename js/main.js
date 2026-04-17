@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!navbar) return;
 
     const path = window.location.pathname;
-    const isTransparentPage = path === '/' || path === '/index.html' || path === '/contacto.html' || path.endsWith('contacto.html');
+    const isTransparentPage = true;
 
     function updateNavbar() {
       const scrolled = window.scrollY > 10;

@@ -10,61 +10,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/styles.css">
   <style>
-    .nosotros-hero {
-      position: relative;
-      min-height: 340px;
-      display: flex;
-      align-items: flex-end;
-      background: var(--navy);
-      overflow: hidden;
-    }
-    .nosotros-hero-bg {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, var(--navy) 0%, var(--primary) 100%);
-      opacity: 0.95;
-    }
-    .nosotros-hero-img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0.18;
-    }
-    .nosotros-hero-content {
-      position: relative;
-      z-index: 2;
-      padding: 7rem 0 3.5rem;
-    }
-    .nosotros-badge {
-      display: inline-block;
-      background: rgba(255,153,0,.15);
-      color: var(--accent);
-      border: 1px solid rgba(255,153,0,.3);
-      border-radius: 2rem;
-      padding: .35rem 1.1rem;
-      font-size: .8rem;
-      font-weight: 600;
-      letter-spacing: .06em;
-      text-transform: uppercase;
-      margin-bottom: 1.25rem;
-    }
-    .nosotros-hero-h1 {
-      font-size: clamp(2rem, 5vw, 3.2rem);
-      font-weight: 800;
-      color: #fff;
-      line-height: 1.15;
-      margin: 0 0 1rem;
-    }
-    .nosotros-hero-h1 .accent { color: var(--accent); }
-    .nosotros-hero-p {
-      font-size: 1.05rem;
-      color: rgba(255,255,255,.75);
-      max-width: 580px;
-      line-height: 1.7;
-    }
-
     /* Main content */
     .nosotros-body {
       background: #fff;
@@ -181,15 +126,18 @@
   <div id="navbar-placeholder"></div>
 
   <!-- HERO -->
-  <section class="nosotros-hero">
-    <img src="/images/about_pyme.png" alt="Alba Postal" class="nosotros-hero-img">
-    <div class="nosotros-hero-bg"></div>
-    <div class="container nosotros-hero-content">
-      <span class="nosotros-badge">Quiénes somos</span>
-      <h1 class="nosotros-hero-h1">Más de 25 años conectando<br><span class="accent">personas y empresas</span></h1>
-      <p class="nosotros-hero-p">Somos una empresa argentina con presencia internacional, especializada en logística postal, e-commerce y courier puerta a puerta.</p>
+  <div class="page-hero">
+    <div class="page-hero-bg">
+      <img src="/images/about_pyme.png" alt="Alba Postal">
+      <div class="page-hero-overlay-r"></div>
+      <div class="page-hero-overlay-t"></div>
     </div>
-  </section>
+    <div class="container page-hero-content">
+      <span class="page-hero-tag">Quiénes somos</span>
+      <h1 class="page-hero-h1">Más de 25 años conectando<br><span class="gradient-text">personas y empresas</span></h1>
+      <p class="page-hero-p">Somos una empresa argentina con presencia internacional, especializada en logística postal, e-commerce y courier puerta a puerta.</p>
+    </div>
+  </div>
 
   <!-- BODY -->
   <div class="nosotros-body">

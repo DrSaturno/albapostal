@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   /* --- Counter animation --- */
   function initCounters() {
-    const counters = document.querySelectorAll('.stat-value[data-count]');
+    const counters = document.querySelectorAll('[data-count]');
     if (!counters.length) return;
 
     const observer = new IntersectionObserver((entries) => {
@@ -154,7 +154,8 @@ document.addEventListener('DOMContentLoaded', function () {
           const elapsed  = now - start;
           const progress = Math.min(elapsed / duration, 1);
           const value    = Math.floor(easeOutQuart(progress) * target);
-          el.textContent = prefix + value + suffix;
+          const formatted = value.toLocaleString('es-AR');
+          el.textContent = prefix + formatted + suffix;
           if (progress < 1) requestAnimationFrame(tick);
         }
 

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nosotros — Alba Postal</title>
+  <meta name="description" content="Conocé quiénes somos en Alba Postal. Más de 25 años de trayectoria en logística postal, e-commerce y courier internacional.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+  <style>
+    .nosotros-hero {
+      position: relative;
+      min-height: 340px;
+      display: flex;
+      align-items: flex-end;
+      background: var(--navy);
+      overflow: hidden;
+    }
+    .nosotros-hero-bg {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--primary) 100%);
+      opacity: 0.95;
+    }
+    .nosotros-hero-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.18;
+    }
+    .nosotros-hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 7rem 0 3.5rem;
+    }
+    .nosotros-badge {
+      display: inline-block;
+      background: rgba(255,153,0,.15);
+      color: var(--accent);
+      border: 1px solid rgba(255,153,0,.3);
+      border-radius: 2rem;
+      padding: .35rem 1.1rem;
+      font-size: .8rem;
+      font-weight: 600;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+    }
+    .nosotros-hero-h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.15;
+      margin: 0 0 1rem;
+    }
+    .nosotros-hero-h1 .accent { color: var(--accent); }
+    .nosotros-hero-p {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,.75);
+      max-width: 580px;
+      line-height: 1.7;
+    }
+
+    /* Main content */
+    .nosotros-body {
+      background: #fff;
+      padding: 5rem 0 4rem;
+    }
+    .nosotros-intro {
+      max-width: 820px;
+      margin: 0 auto 4rem;
+      text-align: center;
+    }
+    .nosotros-intro p {
+      font-size: 1.1rem;
+      color: #444;
+      line-height: 1.8;
+      margin-bottom: 1.25rem;
+    }
+
+    .nosotros-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    @media (max-width: 680px) {
+      .nosotros-cards { grid-template-columns: 1fr; }
+    }
+
+    .nosotros-card {
+      background: var(--navy);
+      border-radius: 1.25rem;
+      padding: 2.5rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .nosotros-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: var(--accent);
+      border-radius: 1.25rem 1.25rem 0 0;
+    }
+    .nosotros-card-icon {
+      width: 52px;
+      height: 52px;
+      background: rgba(255,153,0,.12);
+      border-radius: .75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      color: var(--accent);
+    }
+    .nosotros-card h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #fff;
+      margin: 0 0 1rem;
+    }
+    .nosotros-card p {
+      font-size: .95rem;
+      color: rgba(255,255,255,.72);
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    /* Highlights strip */
+    .nosotros-highlights {
+      background: var(--primary);
+      padding: 3.5rem 0;
+      margin-top: 4rem;
+    }
+    .nosotros-highlights .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      text-align: center;
+    }
+    .nosotros-hl-item h4 {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--accent);
+      margin: 0 0 .4rem;
+    }
+    .nosotros-hl-item p {
+      font-size: .9rem;
+      color: rgba(255,255,255,.75);
+      margin: 0;
+    }
+
+    /* CTA */
+    .nosotros-cta {
+      background: #f7f9fc;
+      padding: 4rem 0;
+      text-align: center;
+    }
+    .nosotros-cta h2 {
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 700;
+      color: var(--primary);
+      margin: 0 0 1rem;
+    }
+    .nosotros-cta p {
+      color: #666;
+      margin: 0 0 2rem;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
+</head>
+<body>
+  <div id="navbar-placeholder"></div>
+
+  <!-- HERO -->
+  <section class="nosotros-hero">
+    <img src="/images/about_pyme.png" alt="Alba Postal" class="nosotros-hero-img">
+    <div class="nosotros-hero-bg"></div>
+    <div class="container nosotros-hero-content">
+      <span class="nosotros-badge">Quiénes somos</span>
+      <h1 class="nosotros-hero-h1">Más de 25 años conectando<br><span class="accent">personas y empresas</span></h1>
+      <p class="nosotros-hero-p">Somos una empresa argentina con presencia internacional, especializada en logística postal, e-commerce y courier puerta a puerta.</p>
+    </div>
+  </section>
+
+  <!-- BODY -->
+  <div class="nosotros-body">
+    <div class="container">
+      <div class="nosotros-intro">
+        <p>Alba Postal es una empresa de logística integral con más de 25 años de trayectoria en el mercado argentino e internacional. Nos especializamos en servicios de logística e-commerce, servicio postal, courier puerta a puerta, y en la gestión de exportaciones e importaciones desde y hacia América Latina, Europa y Asia.</p>
+        <p>Contamos con sucursales propias en Buenos Aires, Miami y Guangzhou, donde ofrecemos una gama completa de servicios sustentados en tecnología de punta para administrar toda la cadena de suministro de nuestros clientes.</p>
+        <p>Nos acercamos a cada cliente con más de 170 puntos de entrega en Argentina y 6 sucursales centrales exclusivas en Buenos Aires, garantizando cobertura, velocidad y trato personalizado en cada envío.</p>
+      </div>
+
+      <!-- Misión y Visión -->
+      <div class="nosotros-cards">
+        <div class="nosotros-card">
+          <div class="nosotros-card-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/>
+              <line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/>
+              <line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/>
+            </svg>
+          </div>
+          <h3>Nuestra Misión</h3>
+          <p>Brindar soluciones logísticas integrales, confiables y eficientes que conecten personas, empresas y mercados, generando valor en cada eslabón de la cadena de suministro. Nos comprometemos a ofrecer un servicio personalizado, ágil y tecnológicamente innovador que supere las expectativas de nuestros clientes y contribuya al desarrollo del comercio nacional e internacional.</p>
+        </div>
+        <div class="nosotros-card">
+          <div class="nosotros-card-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/>
+            </svg>
+          </div>
+          <h3>Nuestra Visión</h3>
+          <p>Ser el operador logístico de referencia en Latinoamérica, reconocido por nuestra capacidad de adaptación, excelencia operativa y compromiso con la satisfacción del cliente. Aspiramos a expandir nuestra red global de manera sostenible, integrando tecnología de vanguardia y talento humano excepcional para liderar la transformación logística de la región.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Highlights -->
+    <div class="nosotros-highlights">
+      <div class="container">
+        <div class="nosotros-hl-item">
+          <h4>25+</h4>
+          <p>Años de trayectoria</p>
+        </div>
+        <div class="nosotros-hl-item">
+          <h4>170+</h4>
+          <p>Puntos de entrega</p>
+        </div>
+        <div class="nosotros-hl-item">
+          <h4>4</h4>
+          <p>Países con presencia</p>
+        </div>
+        <div class="nosotros-hl-item">
+          <h4>500+</h4>
+          <p>Clientes satisfechos</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <section class="nosotros-cta">
+    <div class="container">
+      <h2>¿Querés trabajar con nosotros?</h2>
+      <p>Contactate con nuestro equipo y diseñamos juntos la solución logística ideal para tu negocio.</p>
+      <a href="/contacto.html" class="btn btn-accent btn-lg">Contactar ahora</a>
+    </div>
+  </section>
+
+  <div id="footer-placeholder"></div>
+  <div id="whatsapp-placeholder"></div>
+
+  <script src="/js/components.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>

@@ -16,6 +16,7 @@ function getNavbarHTML() {
       </nav>
       <div class="navbar-right" id="navbar-right">
         <a href="/index.html">Inicio</a>
+        <a href="/nosotros.html">Nosotros</a>
         <a href="/contacto.html">Contacto</a>
         <span class="tracking-badge" title="Disponible en Fase 2">Tracking</span>
       </div>
@@ -40,6 +41,7 @@ function getNavbarHTML() {
           <a href="/servicios/servicio-postal.html">Servicio Postal</a>
           <a href="/servicios/agentes-carga.html">Agentes de carga</a>
         </div>
+        <a href="/nosotros.html">Nosotros</a>
         <a href="/contacto.html">Contacto</a>
         <span class="mobile-tracking-badge">Tracking (Próximamente)</span>
       </div>
@@ -86,6 +88,7 @@ function getFooterHTML() {
         <div class="footer-col">
           <h4>Empresa</h4>
           <ul>
+            <li><a href="/nosotros.html">Nosotros</a></li>
             <li><a href="/sucursales.html">Sucursales</a></li>
             <li><span class="disabled">Tracking</span></li>
             <li><a href="/contacto.html">Contacto</a></li>

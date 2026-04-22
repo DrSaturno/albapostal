@@ -66,7 +66,7 @@ function getFooterHTML() {
             </div>
             <div class="footer-contact-item">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.42 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.82a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              <span>A confirmar</span>
+              <a href="tel:+5491168861829">+54 9 11 6886-1829</a>
             </div>
             <div class="footer-contact-item">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -97,13 +97,13 @@ function getFooterHTML() {
         <div class="footer-col">
           <h4>Seguinos</h4>
           <div class="social-links">
-            <a href="https://instagram.com" class="social-link" aria-label="Instagram" target="_blank" rel="noopener">
+            <a href="#" class="social-link" aria-label="Instagram">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="20" x="2" y="2" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
             </a>
-            <a href="https://facebook.com" class="social-link" aria-label="Facebook" target="_blank" rel="noopener">
+            <a href="#" class="social-link" aria-label="Facebook">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
             </a>
-            <a href="https://linkedin.com" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener">
+            <a href="#" class="social-link" aria-label="LinkedIn">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
             </a>
             <a href="https://wa.me/5491168861829" class="social-link" aria-label="WhatsApp" target="_blank" rel="noopener">
@@ -115,15 +115,12 @@ function getFooterHTML() {
             <p>Recibí novedades y promociones</p>
             <input type="email" placeholder="tu@email.com" class="newsletter-input" id="newsletter-email">
             <button class="newsletter-btn" id="newsletter-btn">Suscribirse</button>
+            <p id="newsletter-msg" style="font-size:.8rem;margin-top:.5rem;display:none"></p>
           </div>
         </div>
       </div>
       <div class="footer-bottom">
-        <ul class="footer-legal">
-          <li><a href="#">Términos y Condiciones</a></li>
-          <li><a href="#">Política de Privacidad</a></li>
-          <li><a href="#">Política de Calidad</a></li>
-        </ul>
+
         <div class="footer-copy">
           <span>© ${year} Alba Postal. Todos los derechos reservados. &nbsp;|&nbsp; Diseñado por <a href="https://crecermas.agency" target="_blank" rel="noopener">CrecerMas.Agency</a></span>
         </div>
@@ -153,17 +150,31 @@ function initComponents() {
   // Inject WhatsApp
   document.body.insertAdjacentHTML('beforeend', getWhatsAppHTML());
 
-  // Newsletter
+  // Newsletter → FormSubmit
   setTimeout(() => {
     const newsletterBtn = document.getElementById('newsletter-btn');
     if (newsletterBtn) {
-      newsletterBtn.addEventListener('click', function() {
+      newsletterBtn.addEventListener('click', async function() {
         const emailInput = document.getElementById('newsletter-email');
-        if (emailInput && emailInput.value) {
+        const msgEl = document.getElementById('newsletter-msg');
+        if (!emailInput || !emailInput.value) return;
+        newsletterBtn.textContent = 'Enviando...';
+        newsletterBtn.disabled = true;
+        try {
+          const data = new FormData();
+          data.append('email', emailInput.value);
+          data.append('_subject', 'Nueva suscripción al Newsletter — Alba Postal');
+          await fetch('https://formsubmit.co/ajax/info@albapostal.com.ar', {
+            method: 'POST', headers: { 'Accept': 'application/json' }, body: data
+          });
           emailInput.value = '';
           newsletterBtn.textContent = '¡Suscripto!';
-          setTimeout(() => { newsletterBtn.textContent = 'Suscribirse'; }, 3000);
+          if (msgEl) { msgEl.textContent = 'Te vas a recibir nuestras novedades.'; msgEl.style.display = 'block'; }
+        } catch {
+          newsletterBtn.textContent = 'Suscribirse';
         }
+        newsletterBtn.disabled = false;
+        setTimeout(() => { newsletterBtn.textContent = 'Suscribirse'; if (msgEl) msgEl.style.display = 'none'; }, 4000);
       });
     }
   }, 100);

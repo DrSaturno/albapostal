@@ -182,7 +182,7 @@ document.addEventListener('DOMContentLoaded', function () {
       try {
         const data = new FormData(form);
         data.append('_subject', 'Consulta desde la home – Alba Postal');
-        await fetch('https://formsubmit.co/ajax/info@albapostal.com', {
+        await fetch('https://formsubmit.co/ajax/info@albapostal.com.ar', {
           method: 'POST', headers: { 'Accept': 'application/json' }, body: data
         });
         form.style.display = 'none';
@@ -228,7 +228,7 @@ document.addEventListener('DOMContentLoaded', function () {
       try {
         const data = new FormData(form);
         data.append('_subject', 'Consulta desde albapostal.com.ar');
-        await fetch('https://formsubmit.co/ajax/info@albapostal.com', {
+        await fetch('https://formsubmit.co/ajax/info@albapostal.com.ar', {
           method: 'POST', headers: { 'Accept': 'application/json' }, body: data
         });
         if (btn) { btn.textContent = '✓ Mensaje enviado'; }

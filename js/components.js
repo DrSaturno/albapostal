@@ -12,7 +12,6 @@ function getNavbarHTML() {
       <nav class="navbar-nav" id="navbar-nav">
         <a href="/servicios/logistica-ecommerce.html">Paquetería e-commerce</a>
         <a href="/servicios/servicio-postal.html">Servicio Postal</a>
-        <a href="/servicios/agentes-carga.html">Agentes de carga</a>
       </nav>
       <div class="navbar-right" id="navbar-right">
         <a href="/index.html">Inicio</a>
@@ -39,7 +38,6 @@ function getNavbarHTML() {
         <div class="mobile-menu-sub">
           <a href="/servicios/logistica-ecommerce.html">Paquetería e-commerce</a>
           <a href="/servicios/servicio-postal.html">Servicio Postal</a>
-          <a href="/servicios/agentes-carga.html">Agentes de carga</a>
         </div>
         <a href="/nosotros.html">Nosotros</a>
         <a href="/contacto.html">Contacto</a>
@@ -79,7 +77,6 @@ function getFooterHTML() {
           <ul>
             <li><a href="/servicios/logistica-ecommerce.html">Paquetería e-commerce</a></li>
             <li><a href="/servicios/servicio-postal.html">Servicio Postal</a></li>
-            <li><a href="/servicios/agentes-carga.html">Agentes de carga</a></li>
             <li><a href="/servicios/envios.html">Courier Internacional</a></li>
             <li><span class="disabled">Logística para empresas</span></li>
             <li><span class="disabled">Comprá en USA</span></li>

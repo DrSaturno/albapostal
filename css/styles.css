@@ -32,7 +32,7 @@
 
 /* --- Reset --- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
 body { font-family: var(--font); color: var(--dark); background: #fff; line-height: 1.6; -webkit-font-smoothing: antialiased; }
 img { display: block; max-width: 100%; }
 a { text-decoration: none; }
@@ -851,7 +851,7 @@ input, textarea, select { font-family: inherit; }
 }
 .tracking-h2 .highlight { color: #fff; text-shadow: 0 2px 8px rgba(0,0,0,.25); }
 .tracking-p { font-size: 1.125rem; color: rgba(255,255,255,.75); font-weight: 300; line-height: 1.7; max-width: 28rem; margin-bottom: 2.5rem; }
-.tracking-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 2.5rem; }
+.tracking-stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-bottom: 2.5rem; }
 .tracking-stat {
   text-align: center;
   background: rgba(255,255,255,.1);
@@ -1233,7 +1233,7 @@ input, textarea, select { font-family: inherit; }
 /* ===========================
    SPLIT / 2-COL CONTENT
    =========================== */
-.split-section { padding: 6rem 0; }
+.split-section { padding: 6rem 0; overflow: hidden; }
 .split-grid { display: grid; gap: 4rem; align-items: center; }
 @media (min-width: 1024px) { .split-grid { grid-template-columns: 1fr 1fr; } }
 .split-img-wrap {
@@ -1397,6 +1397,7 @@ input, textarea, select { font-family: inherit; }
   padding: 1rem;
   box-shadow: var(--shadow-sm);
   width: max-content;
+  max-width: 100%;
   margin-bottom: 2.5rem;
 }
 .feature-badge-icon {

@@ -97,7 +97,7 @@
 
       <!-- Sub-services list -->
       <div style="margin-top:5rem;padding-top:4rem;border-top:1px solid rgba(229,231,235,.6)">
-        <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:2.5rem 2rem" class="sub-services-grid">
+        <div style="display:grid;gap:2rem" class="sub-services-grid">
           <div class="sub-service-item">
             <div class="sub-service-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
             <div><h4>Alba Envase Simple</h4><p>Correos con trazabilidad e informe sin firma.</p></div>
@@ -197,6 +197,8 @@
   <script src="/js/main.js"></script>
   <style>
     @media (min-width: 768px) { .cards-grid { grid-template-columns: repeat(3, 1fr) !important; } }
+    .sub-services-grid { grid-template-columns: 1fr; }
+    @media (min-width: 640px)  { .sub-services-grid { grid-template-columns: repeat(2, 1fr) !important; } }
     @media (min-width: 1024px) { .sub-services-grid { grid-template-columns: repeat(4, 1fr) !important; } }
     .sub-service-item { display: flex; gap: 1rem; align-items: flex-start; }
     .sub-service-icon { flex-shrink: 0; width: 2.75rem; height: 2.75rem; background: #fff; border: 1px solid var(--gray-100); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-sm); color: var(--accent); transition: background .3s, color .3s; }
